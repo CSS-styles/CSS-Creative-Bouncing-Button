@@ -1,0 +1,72 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-color: #262626FF;
+}
+div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100px;
+	width: 300px;
+	font-size: 50px;
+	font-weight: bold;
+	font-family: cursive;
+	color: white;
+	letter-spacing: 2px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 60px black;
+	cursor: pointer;
+	overflow: hidden;
+}
+div::before{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 150px;
+	left: 0;
+	background-color: royalblue;
+	z-index: -1;
+}
+div::after{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 150px;
+	right: 0;
+	background-color: dodgerblue;
+	z-index: -1;
+}
+div:hover::before{
+	animation: anime1 1s linear forwards;
+}
+div:hover::after{
+	animation: anime2 1s linear forwards;
+}
+@keyframes anime1{
+	50%{
+		height: 30px;
+		width: 30px;
+		left: 90%;
+		border-radius: 50%;
+	}
+}
+@keyframes anime2{
+	50%{
+		height: 30px;
+		width: 30px;
+		right: 90%;
+		border-radius: 50%;
+	}
+}
